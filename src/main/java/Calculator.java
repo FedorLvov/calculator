@@ -2,12 +2,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class Caculator {
+public class Calculator {
 
-	private static String process(String stringToProcess) { //Основной метод для запуска процесса обработки строки, 
+	public static String process(String stringToProcess) { //Основной метод для запуска процесса обработки строки, 
 		try {												//конструкторов дробей и метода выполняющего арифметические действия над ними
 			int[] parsed = parseLine(stringToProcess);
 			Fraction f1 = new Fraction(parsed[0], parsed[1]);
@@ -37,7 +35,7 @@ public class Caculator {
 
 
 	
-	public static int[] parseLine(String st) throws Exception {  //Метод обработки строки
+	private static int[] parseLine(String st) throws Exception {  //Метод обработки строки
 
 		st = st.replace(" ", "");
 		Boolean isNumenator = true, isAlreadyHasOperator = false, isInsideFraction = true;
@@ -112,7 +110,7 @@ public class Caculator {
 			}
 		}
 		if (isInsideFraction)
-			throw new Exception("Не корретный ввод дроби");
+			throw new Exception("Некорретный ввод дроби");
 		if (!isAlreadyHasOperator)
 			throw new Exception("Выражение не содержит операнда");
 		return arr;

@@ -23,14 +23,14 @@ public @Data class Fraction { //Класс дробь
 		int lcm = leastCommonMultiple(this.denominator, fr2.denominator);
 		int mul1 = lcm / this.denominator;
 		int mul2 = lcm / fr2.denominator;
-		return new Fraction(this.numerator * mul1 + fr2.denominator * mul2, this.denominator * mul1);
+		return new Fraction(this.numerator * mul1 + fr2.numerator * mul2, this.denominator * mul1);
 	}
 
 	public Fraction sub(Fraction fr2) throws Exception { //Метод вычитания дробей
 		int lcm = leastCommonMultiple(this.denominator, fr2.denominator);
 		int mul1 = lcm / this.denominator;
 		int mul2 = lcm / fr2.denominator;
-		return new Fraction(this.numerator * mul1 - fr2.denominator * mul2, this.denominator * mul1);
+		return new Fraction(this.numerator * mul1 - fr2.numerator * mul2, this.denominator * mul1);
 	}
 
 	public Fraction mul(Fraction fr2) throws Exception { //Метод умножения дробей

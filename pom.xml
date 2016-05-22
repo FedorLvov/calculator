@@ -34,8 +34,9 @@
 
 	<build>
 		<finalName>calculator</finalName>
+		
 		<plugins>
-
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -50,6 +51,14 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.6</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>Calculator</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
 			</plugin>
 
 		</plugins>
