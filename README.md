@@ -18,7 +18,7 @@ mvn package
 
 ```
 
-java -jar calculator.jar
+java -jar target/calculator.jar
 
 ```
 

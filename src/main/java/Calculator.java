@@ -25,7 +25,7 @@ public class Calculator {
 				res = f1.div(f2);
 				break;
 			default:
-				throw new Exception("Неизвестный оператор");
+				throw new Exception("Unknown operator");
 			}
 			return stringToProcess + " = " + res.toString();
 		} catch (Exception e) {
@@ -49,7 +49,7 @@ public class Calculator {
 				if (!isAlreadyHasOperator)
 					isAlreadyHasOperator = isInsideFraction = isNumenator = true;
 				else
-					throw new Exception("Выражение содержит более одного операнда");
+					throw new Exception("The expression contains more than one operand");
 				arr[4] = 1;
 				break;
 
@@ -57,7 +57,7 @@ public class Calculator {
 				if (!isAlreadyHasOperator)
 					isAlreadyHasOperator = isInsideFraction = isNumenator = true;
 				else
-					throw new Exception("Выражение содержит более одного операнда");
+					throw new Exception("The expression contains more than one operand");
 				arr[4] = 2;
 				break;
 
@@ -65,7 +65,7 @@ public class Calculator {
 				if (!isAlreadyHasOperator)
 					isAlreadyHasOperator = isInsideFraction = isNumenator = true;
 				else
-					throw new Exception("Выражение содержит более одного операнда");
+					throw new Exception("The expression contains more than one operand");
 				arr[4] = 3;
 				break;
 
@@ -76,7 +76,7 @@ public class Calculator {
 					isAlreadyHasOperator = isInsideFraction = isNumenator = true;
 					arr[4] = 4;
 				} else
-					throw new Exception("Выражение содержит более одного операнда");
+					throw new Exception("The expression contains more than one operand");
 				break;
 
 			default:
@@ -101,24 +101,24 @@ public class Calculator {
 							else
 								arr[3] = fullParsedNumber;
 						} else
-							throw new Exception("Знаменатель не должен быть равен 0");
+							throw new Exception("Denominator should not be equal to 0");
 					}
 					i += j - 1;
 					break;
 				}
-				else throw new Exception("Выраение содержит недопустимые символы");
+				else throw new Exception("The expression contains invalid characters");
 			}
 		}
 		if (isInsideFraction)
-			throw new Exception("Некорретный ввод дроби");
+			throw new Exception("Invalid input fractions");
 		if (!isAlreadyHasOperator)
-			throw new Exception("Выражение не содержит операнда");
+			throw new Exception("The expression does not contain an operand");
 		return arr;
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Программа \"Калькулятор обычных дробей\". Автор: Львов Фёдор.\n"
-				+ "Скобки являются недопустимыми символами. Операнды должны быть положительными\n ");
+		System.out.println("The program \"Calculator ordinary fractions\". Author: Fedor Lvov.\n"
+				+ "Brackets are not valid characters. The operands must be positive\n ");
 		String finalres = "";
 		try {
 			BufferedReader in = new BufferedReader(new FileReader("Fraction.txt"));
